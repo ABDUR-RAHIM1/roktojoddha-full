@@ -1,26 +1,28 @@
-import React, { useContext } from 'react'
-import { GlobalState } from '../../State/State';
-import useFetch from '../../hooks/usefetch';
-import ProfileLoading from '../Loading/ProfileLoading';
+import React from 'react'
 
-export default function Welcome() {
-    const { token } = useContext(GlobalState);
-    const API = `/users/users-one`;
-    const { isLoading, data } = useFetch(API, token);
+export default function Welcome({ user }) {
+    const { name, photo, email, gender, role } = user;
 
-    if (isLoading) {
-        return <ProfileLoading />
-    }
-
-    if (!data) {
-        return <div className=' py-5 px-10 text-center'>Data not Found</div>
-    }
-
-    const { name } = data;
     return (
         <div className="bg-white p-6 rounded-lg shadow-md mb-6">
-            <h2 className="text-2xl font-bold text-gray-700 capitalize">Welcome, {name}</h2>
-            <p className="text-gray-500 mt-2">Thank you for being a dedicated donor. Here’s an overview of your blood donation activity.</p>
+            <div className="flex items-center space-x-4">
+                {/* User Profile Image */}
+                <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-gray-300">
+                    <img src={photo || "https://via.placeholder.com/150"} alt="User Profile" className="w-full h-full object-cover" />
+                </div>
+                {/* User Info */}
+                <div>
+                    <h2 className="text-2xl font-bold text-gray-700 capitalize">{name}</h2>
+                    <p className="text-gray-500 mt-2">{role ? `Role: ${role}` : "Role: Donor"}</p>
+                    <p className="text-gray-500 mt-1">{email}</p>
+                    <p className="text-gray-500 mt-1">Gender: {gender}</p>
+                </div>
+            </div>
+            <div className="mt-6">
+                <p className="text-gray-500">
+                    Thank you for being a dedicated donor. Here’s an overview of your blood donation activity.
+                </p>
+            </div>
         </div>
     )
 }

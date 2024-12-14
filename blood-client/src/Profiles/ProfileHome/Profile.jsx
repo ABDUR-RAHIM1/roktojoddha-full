@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import ProifleLayout from '../ProifleLayout'
 import { motion } from 'framer-motion'
 import { GlobalState } from '../../State/State';
@@ -7,21 +7,32 @@ import ProfileLoading from "../../Profiles/Loading/ProfileLoading"
 import Welcome from './Welcome';
 import DonationInfo from './DonationInfo';
 import Shedule from './Shedule';
-export default function Profile() {
 
+export default function Profile() {
   const { token } = useContext(GlobalState);
   const API = `/users/users-one`;
+
+  // State to store fetched data
+  const [userData, setUserData] = useState(null);
+
   const { isLoading, data } = useFetch(API, token);
 
-  if (isLoading) {
+  // Fetch data on component mount or when the token changes
+  useEffect(() => {
+    if (data) {
+      setUserData(data);
+    }
+  }, [data]);
+
+  console.log(data)
+
+  if (isLoading || !userData) {
     return <ProfileLoading />
   }
 
-  if (!data) {
+  if (!userData) {
     return <div className=' py-5 px-10 text-center'>Data not Found</div>
   }
-
-
 
   return (
     <ProifleLayout>
@@ -31,8 +42,8 @@ export default function Profile() {
         transition={{
           duration: 0.5
         }}
-        >
-        <Welcome />
+      >
+        <Welcome user={userData} />
         <DonationInfo />
         <Shedule />
 
@@ -40,8 +51,6 @@ export default function Profile() {
           <h3 className="text-xl font-bold text-gray-700 mb-4">Why Donate Blood Regularly?</h3>
           <p className="text-gray-600">Donating blood not only helps those in need but also improves your health by reducing the risk of heart diseases and stimulating blood cell production.</p>
         </div>
-
-
       </motion.div>
     </ProifleLayout>
   )
