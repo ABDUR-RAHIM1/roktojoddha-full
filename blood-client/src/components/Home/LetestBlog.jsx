@@ -54,7 +54,7 @@ export default LetestBlog;
 
 
 function HomeBlog({ blog, index }) {
-    const { postAt, title, profilePic, desc } = blog;
+    const { postAt, title, photo, desc } = blog;
     const { times } = useContext(GlobalState);
 
     const formattedIndex = index < 9 ? `0${index + 1}` : `${index + 1}`;
@@ -71,7 +71,7 @@ function HomeBlog({ blog, index }) {
             {/* Blog Image */}
             <div className='w-full md:w-[50%] h-[450px] my-3 overflow-hidden relative'>
                 <img
-                    src={profilePic || demoImg}
+                    src={photo || demoImg}
                     className='w-full h-full object-cover duration-300 rounded-md hover:scale-110'
                     alt={title || "Blog"}
                 />

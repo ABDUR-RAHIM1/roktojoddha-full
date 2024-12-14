@@ -6,7 +6,7 @@ import Banner from '../utils/Banner';
 function DonarDetails() {
     const { state, pathname } = useLocation();
 
-    const { profilePic, name } = state;
+    const { photo, name } = state;
 
 
     return (
@@ -22,7 +22,7 @@ function DonarDetails() {
                 className=' px-5 md:px-10 py-10 md:py-20 bg-gray-200'>
                 <div className="w-full ">
                     <div className=' w-full  overflow-hidden'>
-                        <img className='w-full m-auto  h-auto max-h-[80vh] rounded-sm' src={profilePic || demoImg} alt="roktojoddha" />
+                        <img className='w-full m-auto  h-auto max-h-[80vh] rounded-sm' src={ photo || demoImg} alt="roktojoddha" />
                     </div>
                     <h1 className='heading text-center text-red-500 font-bold my-10 italic uppercase'>Name : {name}</h1>
 

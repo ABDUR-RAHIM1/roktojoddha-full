@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import demoImg from '../../images/demo.jpg'
 
 function Donar(props) {
-    const { profilePic, name, bloodGroup, gender, address } = props.donar
+    const { photo, name, bloodGroup, gender, address } = props.donar
 
     return (
         <motion.div
@@ -19,7 +19,7 @@ function Donar(props) {
             <div className="w-full h-[50vh] overflow-hidden relative">
                 <img
                     className='w-full h-full object-cover transition-all duration-300 group-hover:scale-110 group-hover:opacity-80'
-                    src={profilePic || demoImg}
+                    src={photo || demoImg}
                     alt={`${name}'s profile`}
                 />
                 {/* Add a subtle overlay */}

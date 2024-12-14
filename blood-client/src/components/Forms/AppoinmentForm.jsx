@@ -88,15 +88,17 @@ function AppoinmentForm() {
           }
         </h1>
 
-        <SelectField
-          label="Is Blood Donation Successful?"
-          name="donationStatus"
-          value={formData.donationStatus}
-          required={required}
-          handleChange={handleChange}
-          defaultOption={"Donation Status"}
-          options={["yes", "no"]}
-        />
+        {
+          state &&
+          <SelectField
+            label="Is Blood Donation Successful?"
+            name="donationStatus"
+            value={formData.donationStatus}
+            required={required}
+            handleChange={handleChange}
+            defaultOption={"Donation Status"}
+            options={["yes", "no"]}
+          />}
         {/* Patient Name */}
         <Inputs
           type="text"

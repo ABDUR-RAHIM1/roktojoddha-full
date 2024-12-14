@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { GlobalState } from '../../State/State';
 
 function Blog(props) {
-    const { postAt, title, profilePic, desc } = props.blog;
+    const { postAt, title, photo, desc } = props.blog;
     const { index } = props
     const { times } = useContext(GlobalState)
 
@@ -21,7 +21,7 @@ function Blog(props) {
             viewport={{ once: true }}
             className={`px-5 md:px-10 w-full flex items-center justify-between flex-wrap my-10 ${indexing ? " flex-row-reverse" : ""}`}>
             <div className=' w-full md:w-[50%] h-[500px] my-3 overflow-hidden relative'>
-                <img src={profilePic || demoImg} className=' w-full h-full duration-300 hover:scale-125' alt="roktojoddha" />
+                <img src={photo || demoImg} className=' w-full h-full duration-300 hover:scale-125' alt="roktojoddha" />
                 <span className=' bg-black text-white bg-opacity-40 py-3 px-5 rounded-md absolute top-0 left-0'>
                     {times(postAt)}
                 </span>

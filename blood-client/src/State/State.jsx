@@ -1,16 +1,17 @@
 
 import React, { useState, createContext, useEffect } from "react";
 import { toast } from "react-toastify";
-import Cookies from "js-cookie";
+import Cookies from "js-cookie";  
+import { API_ADDRESS } from "../API/API";
 
 export const GlobalState = createContext();
 
 // wrap this function name on app component
 export const MyState = ({ children }) => {
 
-  const API = 'http://localhost:8000/api'
+  // const API = 'http://localhost:8000/api'
   // const API = 'https://blood-donation-rzj3.onrender.com/api'
-
+const API = API_ADDRESS
 
   //  reuseble state all are components
   const [isAdminLogin, setIsAdminLogin] = useState(false);
@@ -168,7 +169,7 @@ export const MyState = ({ children }) => {
       .then(data => {
         setIsLoading(false);
         setOneBlog(data.blogs);
-        console.log("staet" , data)
+        console.log("staet", data)
       })
   }
 
@@ -320,6 +321,7 @@ export const MyState = ({ children }) => {
       }
 
       const result = await response.json();
+      console.log(result)
       setDeleting(false);
       result.ok ? toast.success(result.message) : toast.error(result, message)
 

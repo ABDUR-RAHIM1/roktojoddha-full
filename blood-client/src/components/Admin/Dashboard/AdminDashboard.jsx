@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { FaRegArrowAltCircleLeft } from "react-icons/fa"
 function AdminDashboard({ children }) {
   const [arrowClick, setArrowClick] = useState(false)
-  console.log(arrowClick)
+
   return (
     <motion.div
       className='flex-b items-start'>

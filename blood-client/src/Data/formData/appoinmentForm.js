@@ -1,5 +1,5 @@
 export const appoinmentInitialState = {
-    donationStatus: '',
+    donationStatus: 'no',
     patientName: '',
     patientAge: '',
     contactNumber: '',

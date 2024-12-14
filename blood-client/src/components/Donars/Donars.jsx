@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Banner from '../utils/Banner'
 import ErrorMessage from '../utils/ErrorMessage'
 import SelectField from '../utils/SelectField'
-import { API } from '../../API/API'
+import { API_ADDRESS } from '../../API/API'
 
 function Donars() {
 
@@ -23,7 +23,7 @@ function Donars() {
 
             const API_KEY = `/donar-register/donars/?search=${searchValue}`;
             try {
-                const res = await fetch(API + API_KEY)
+                const res = await fetch(API_ADDRESS + API_KEY)
                 const result = await res.json();
                 setDonars(result)
             } catch (error) {

@@ -8,7 +8,7 @@ import Notification from '../utils/Notification'
 import ResetPassword from '../utils/ResetPassword'
 import useFileUploader from '../../hooks/useFileUploader'
 import FileField from '../utils/FileField'
-import { API } from '../../API/API'
+import { API_ADDRESS } from '../../API/API'
 import { toast } from 'react-toastify'
 import Cookies from 'js-cookie'
 import SelectField from '../utils/SelectField'
@@ -35,7 +35,7 @@ function UserLogin() {
   const handleUserLogin = (e) => {
     setIsLoading(true)
     e.preventDefault();
-    fetch(`${API}/users/login`, {
+    fetch(`${API_ADDRESS}/users/login`, {
       method: "POST",
       headers: {
         "Content-type": "application/json"

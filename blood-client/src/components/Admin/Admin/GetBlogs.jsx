@@ -12,7 +12,6 @@ function GetBlogs() {
     getOneBlogAdmin();
   }, [isDelete]);
 
-  console.log(oneBlog)
   if (isLoading) {
     return <LoadingSpinner />
   }

@@ -43,7 +43,6 @@ function AddBlog() {
     }
   }
 
-  console.log(formData)
 
   useEffect(() => {
 

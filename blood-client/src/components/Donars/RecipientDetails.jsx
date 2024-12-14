@@ -10,8 +10,6 @@ function RecipientDetails() {
     const { state, pathname } = useLocation();
     const { photo } = state;
 
-    console.log(state)
-
     return (
 
         <>
@@ -128,7 +126,7 @@ function RecipientTable({ data }) {
                 </tr>
                 <tr className="border-b">
                     <td className="px-6 py-4 font-medium text-gray-900">Doctor Contact:</td>
-                    <td className="px-6 py-4">{doctorContact}</td>
+                    <td className="px-6 py-4">{doctorContact || "N/A"}</td>
                 </tr>
                 <tr className="border-b">
                     <td className="px-6 py-4 font-medium text-gray-900">Patient Age:</td>

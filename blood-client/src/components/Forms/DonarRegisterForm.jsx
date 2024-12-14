@@ -18,13 +18,11 @@ function DonarRegisterForm() {
 
     const [formData, setFormData] = useState(initialRegisterFormState);
 
-    console.log(posting)
     const handleChange = async (e) => {
         const { name, value } = e.target;
         if (name === "photo") {
             const image = e.target.files[0];
             await uploadFile(image, setFormData);
-            console.log("photo")
         } else {
 
             setFormData({ ...formData, [name]: value })

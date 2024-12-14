@@ -20,13 +20,15 @@ export default function BlogTable(props) {
     useEffect(() => {
         setBlogs(initialBlogs);
     }, [initialBlogs]);
- 
+
     const columns = [
         {
             name: "Photo",
-            selector: row => <img src={
-                row.photo ? row.photo : demoImg
-            } alt="roktojoddha" className='w-[100px] h-[100px] rounded-md my-3' />
+            selector: row => <Link to={"/blog-details"} state={row} title='Blog Details'>
+                <img src={
+                    row.photo ? row.photo : demoImg
+                } alt="roktojoddha" className='w-[100px] h-[100px] rounded-md my-3' />
+            </Link>
         },
         {
             name: "title",

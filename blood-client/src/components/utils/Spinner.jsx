@@ -5,7 +5,7 @@ function LoadingSpinner() {
 
   return (
     <div className='w-full h-screen  flex items-center justify-center flex-col gap-4'>
-      <h1 className='text-6xl text-red-500 font-bold'>ROKTOJODDHA</h1>
+      <h1 className=' text-3xl md:text-6xl text-red-500 font-bold'>ROKTOJODDHA</h1>
       <motion.div
         animate={{ rotate: 360 }}
         transition={{

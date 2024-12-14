@@ -15,7 +15,7 @@ function BlogDetails() {
     const { state, pathname } = useLocation();
     const { times } = useContext(GlobalState)
 
-    const { profilePic, title, desc, name, role, postAt, } = state;
+    const { photo, title, desc, name, role, postAt, } = state;
 
 
     return (
@@ -32,25 +32,21 @@ function BlogDetails() {
 
             <div className=' px-5  py-10  flex-b flex-wrap items-start'>
                 <div className="w-full">
-                    <img className=' w-full h-auto max-h-[80vh]' src={profilePic ? profilePic : demoImg} alt="" />
+                    <img className=' w-full h-auto max-h-[80vh]' src={photo ? photo : demoImg} alt="" />
 
 
-                    <div className=' my-8 flex items-center gap-4'>
-                        <p className='text-xl md:text-2xl text-red-500 font-medium flex items-center gap-2'>
-                            <IoIosTimer />   {times(postAt)}
+                    <div className='my-8 flex flex-wrap items-center gap-4 md:gap-8 justify-center md:justify-start'>
+                        <p className='text-sm md:text-xl text-red-500 font-medium flex items-center gap-2'>
+                            <IoIosTimer /> {times(postAt)}
                         </p>
-                        <p className='text-xl md:text-2xl text-red-500 font-medium flex items-center gap-2'>
-                            <FaComments /> {
-                                desc && desc.split(".").length || 1
-                            } Comments
+                        <p className='text-sm md:text-xl text-red-500 font-medium flex items-center gap-2'>
+                            <FaComments /> {desc && desc.split(".").length || 1} Comments
                         </p>
-                        <p>||</p>
-
-                        <p className='text-xl md:text-2xl text-red-500 font-medium flex items-center gap-2'>
+                        <p className='hidden md:block'>||</p>
+                        <p className='text-sm md:text-xl text-red-500 font-medium flex items-center gap-2'>
                             <MdMan />
-                            {name} {`(${role})`}</p>
-
-
+                            {name} {`(${role})`}
+                        </p>
                     </div>
 
 

@@ -7,16 +7,8 @@ import { FaRegEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
 
 function Blog(props) {
-    const { _id, role, postAt, title, desc, profilePic } = props.blog;
-    const [show, setShow] = useState(false)
+    const { _id, role, postAt, title, profilePic } = props.blog;
     const { handleDeleteBlog, times } = useContext(GlobalState)
-    const handleShow = () => {
-        setTimeout(() => {
-            setShow(!show)
-        }, 1000);
-    }
-
-    console.log(props.blog)
 
     //  admin blog 
 

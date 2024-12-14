@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { API } from '../API/API';
+import { API_ADDRESS } from '../API/API';
 
 export default function useFetch(API_KEY, isToken) {
     const [isLoading, setIsLoading] = useState(false);
@@ -21,7 +21,7 @@ export default function useFetch(API_KEY, isToken) {
                     headers["Authorization"] = `Bearer ${isToken}`;
                 }
 
-                const res = await fetch(`${API + API_KEY}`, {
+                const res = await fetch(`${API_ADDRESS + API_KEY}`, {
                     method: "GET",
                     headers: headers,
                 });

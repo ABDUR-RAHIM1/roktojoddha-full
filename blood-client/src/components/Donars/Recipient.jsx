@@ -22,7 +22,7 @@ function Recipient(props) {
                 duration: 1
             }}
             viewport={{ once: true }}
-            className='group w-full md:w-[32%] my-5 bg-white shadow-lg rounded-xl p-2 transition-all duration-300 transform hover:scale-105 hover:shadow-xl'>
+            className='group w-full md:w-[31%] my-5 bg-white shadow-lg rounded-xl p-2 transition-all duration-300 transform hover:scale-105 hover:shadow-xl'>
             {/* Image Section */}
             <div className="w-full h-[50vh] overflow-hidden relative">
                 <img
@@ -64,7 +64,7 @@ function Recipient(props) {
                         </tr>
 
                         <tr className="border-b border-gray-200 py-2">
-                            <td className="font-semibold text-gray-700">Status:</td>
+                            <td className="font-semibold text-gray-700">  Completed?:</td>
                             <td className="text-gray-600">
                                 <button
                                     className={`py-2 px-4 rounded-md text-white w-full ${donationStatus === "yes" ? "bg-green-700" : "bg-red-600"}`}

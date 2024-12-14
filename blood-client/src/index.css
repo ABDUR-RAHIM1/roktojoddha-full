@@ -37,7 +37,9 @@ body {
   .menu {
     @apply w-10 h-1 bg-red-500 m-2 cursor-pointer
   }
-
+  .heading { 
+    @apply  text-[22px] md:text-[32px]
+  }
   .input {
     @apply w-full py-6 px-4
   }
@@ -224,10 +226,7 @@ body {
     margin-top: 10px;
   }
 
-  .heading {
-    font-size: 32px;
-    font-weight: 500;
-  }
+
 
   .scroll-none::-webkit-scrollbar {
     display: none;
