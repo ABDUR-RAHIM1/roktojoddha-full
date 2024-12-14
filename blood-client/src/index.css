@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz@8..144&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Roboto Serif', serif;
+  color: rgb(41, 41, 41);
+}
+
+@layer components {
+  .wrap {
+    @apply px-5 md:px-10
+  }
+
+  .primaryBg {
+    @apply bg-[#ed143d] text-[#f0f8ff]
+  }
+
+  .primaryBg2 {
+    @apply bg-[#c51919] text-[#f0f8ff]
+  }
+
+  .secondaryBg {
+    @apply bg-black text-gray-200
+  }
+
+  .flex-b {
+    @apply flex items-center justify-between
+  }
+
+  .item {
+    @apply ml-6 text-lg font-semibold uppercase
+  }
+
+  .menu {
+    @apply w-10 h-1 bg-red-500 m-2 cursor-pointer
+  }
+
+  .input {
+    @apply w-full py-6 px-4
+  }
+
+  .add_form {
+    @apply w-full md:w-10/12 m-auto bg-gray-50 p-4
+  }
+
+  .form-w {
+    /* w-10/12 md:w-2/4 m-auto */
+    @apply w-full
+  }
+
+  .login_forms {
+    @apply w-11/12 m-auto bg-gray-50 flex justify-center items-center gap-2 flex-wrap rounded-lg
+  }
+
+  .button_blue {
+    @apply w-full text-white bg-blue-800 hover:bg-blue-900
+  }
+
+  .addBanner {
+    @apply w-full mb-3 sm:w-2/4 py-2 px-5 text-slate-200 cursor-pointer hover:text-slate-300
+  }
+
+  .proccesCard {
+    @apply p-2 w-full sm:w-[48%] md:w-[31%] my-5 h-auto sm:h-[400px] md:h-auto bg-gray-100 rounded-sm shadow-sm duration-200 hover:bg-red-500 hover:text-white
+  }
+
+  .icons {
+    @apply text-3xl bg-red-800 p-1 hover:cursor-pointer text-white hover:bg-red-500 hover:text-black
+  }
+
+  .button {
+    @apply py-2 px-3 text-sm rounded-sm duration-100
+  }
+
+  .formHeading {
+    @apply text-2xl text-slate-100 text-center my-3
+  }
+
+  /*  register , login  type text */
+  .loginText {
+    @apply text-gray-500 text-lg text-center block cursor-pointer italic underline
+  }
+
+  /* blog details page  */
+
+  /* donar*/
+
+
+  .donarLoginFiled {
+    @apply bg-gray-50 border mt-3 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500
+  }
+
+
+
+  /*  donar*/
+
+
+  /* profile start */
+
+  .donarProfileLeSidebar {
+    @apply py-10 bg-gray-100
+  }
+
+  .profielCard {
+    @apply bg-gray-200 text-center py-5 rounded-md shadow-sm shadow-slate-300
+  }
+
+  .donarProfileMain {
+    @apply flex-1
+  }
+
+  .eventWrapper {
+    @apply flex-b flex-wrap justify-between
+  }
+
+  .events {
+    @apply w-full sm:w-[48%] md:w-[31%] bg-gray-100 my-5 shadow-sm
+  }
+
+  .eventBtn {
+    @apply w-full text-center bg-gray-200 text-black hover:bg-slate-200
+  }
+
+  /* profile  end */
+
+
+
+  .page-sidebar {
+    @apply flex-1 ml-3 py-10
+  }
+
+  /* blog details page  */
+
+  /*  footer */
+  .newsletter {
+    @apply py-7 border-t border-slate-100 flex justify-between items-center flex-wrap
+  }
+
+  .newsletter p {
+    @apply mb-3
+  }
+
+  .newsletter input {
+    @apply w-full p-3 text-black
+  }
+
+  /*  footer */
+
+  /*  admin ddasbboard */
+
+  .sidebar {
+    @apply bg-gray-100 h-screen py-10 duration-300 shadow-md shadow-gray-300
+  }
+
+  .sidebarBtn {
+    @apply w-full py-2 text-center rounded-sm text-black bg-gray-200 cursor-pointer my-3 uppercase hover:bg-indigo-700 hover:text-white hover:scale-125 duration-150
+  }
+
+  .arrow {
+    @apply text-3xl text-black sticky top-0 left-0 cursor-pointer z-50
+  }
+
+  .dahboard_main {
+    @apply flex-1 bg-gray-200 h-screen overflow-y-auto p-5
+  }
+
+  /* dashboard add form  */
+
+  .dash_board_items {
+    @apply w-full sm:w-[48%] md:w-[31%] py-5 px-2 my-10 shadow-md rounded-md border-red-300 cursor-pointer
+  }
+
+  .dash_card {
+    @apply text-sm leading-7 uppercase
+  }
+
+
+  .title {
+    @apply text-2xl font-semibold md:text-4xl my-3 md:font-bold text-center uppercase text-slate-900
+  }
+
+  /* dashboard add form  */
+
+  .adminBtn {
+    @apply w-full bg-slate-400 absolute top-0 right-0
+  }
+
+  /* manageContent => add logo */
+  .logos {
+    @apply flex items-center justify-start w-full overflow-x-scroll gap-2
+  }
+
+  .manageHeading {
+    @apply text-white capitalize w-full pt-3 text-center shadow-md
+  }
+
+  /*  admin ddasbboard */
+}
+
+@layer base {
+
+  body {
+    scroll-behavior: smooth;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+
+  .inset-center {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+
+
+  .ul li {
+    margin-top: 10px;
+  }
+
+  .heading {
+    font-size: 32px;
+    font-weight: 500;
+  }
+
+  .scroll-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  .login_page_bg {
+
+    background: url("./images/loginBg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+label {
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+td {
+  text-align: left;
+  vertical-align: middle;
+  text-transform: capitalize;
+}
+
+tr {
+  vertical-align: middle;
+
+}
+
+th {
+  text-transform: uppercase;
+  font-weight: normal;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+p,
+small {
+  word-wrap: break-word;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.5rem;
+  white-space: pre-line;
+}
+
+li {
+  font-size: 15px;
+  line-height: 1.5rem;
+}
+
+.dropdown-menu[data-bs-popper] {
+  top: 100%;
+  left: -78px;
+  border: 0;
+  margin-top: var(--bs-dropdown-spacer);
+  background-color: whitesmoke
+}
+
+/*  sldier css start  */
+
+
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 500px;
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+
+/*  sldier css end  */
+
+/*  dasboard card css */
+
+.card-one {
+  background: #6a11cb;
+  background: -webkit-linear-gradient(to left, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+  background: linear-gradient(to left, rgb(29, 24, 33), rgba(37, 117, 252, 1))
+}
+
+.card-two {
+  background: #f093fb;
+  background: -webkit-linear-gradient(to left, rgba(240, 147, 251, 1), rgba(245, 87, 108, 1));
+  background: linear-gradient(to left, rgb(29, 24, 33), rgba(245, 87, 108, 1))
+}
+
+.card-three {
+  background: #4facfe;
+  background: -webkit-linear-gradient(to left, rgba(79, 172, 254, 1), rgba(0, 242, 254, 1));
+  background: linear-gradient(to left, rgb(29, 24, 33), rgba(0, 242, 254, 1))
+}
+
+.card-four {
+  background: #f6d365;
+  background: -webkit-linear-gradient(to left, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+  background: linear-gradient(to left, rgb(29, 24, 33), rgba(253, 160, 133, 1))
+}
+
+.card-five {
+  background: #c471f5;
+  background: -webkit-linear-gradient(to left, rgba(196, 113, 245, 1), rgba(250, 113, 205, 1));
+  background: linear-gradient(to left, rgb(29, 24, 33), rgba(250, 113, 205, 1))
+}
+
+/*  dasboard card css end */
